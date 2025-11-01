@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — CNPSC</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="index.html" aria-label="CNPSC Home">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <rect x="3" y="6" width="34" height="28" rx="8" ry="8" fill="url(#g)"/>
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="40" y2="40">
+            <stop stop-color="#1e88e5"/><stop offset="1" stop-color="#1565c0"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>CNPSC</span>
+    </a>
+    <nav class="navlinks">
+        <a href="index.html" class="">Home</a>
+        <a href="about.html" class="">About</a>
+        <a href="benefits.html" class="">Benefits</a>
+        <a href="join.html" class="">Join</a>
+        <a href="resources.html" class="">Resources</a>
+        <a href="employment.html" class="">Employment</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a class="cta" href="join.html">Apply</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Toggle menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <section class="section">
+      <div class="container grid grid-2">
+        <div>
+          <h1>Contact Us</h1>
+          <p>We’re here to help with enrollment, menu planning, claims, and training.</p>
+          <form id="contactForm" novalidate>
+            <label for="cname">Your name *</label>
+            <input id="cname" required />
+            <label for="cemail">Email *</label>
+            <input id="cemail" type="email" required placeholder="you@example.com" />
+            <label for="cmsg">Message *</label>
+            <textarea id="cmsg" required placeholder="How can we help?"></textarea>
+            <div style="margin-top:1rem"><button class="btn" type="submit">Send</button></div>
+          </form>
+          <script>validateForm('contactForm')</script>
+        </div>
+        <div class="card">
+          <h3>Office</h3>
+          <p>7777 Alvarado Rd, Suite 422<br/>La Mesa, CA 91942</p>
+          <p><strong>Phone</strong><br/>(619) 465‑4500 · (800) 233‑8107<br/><strong>Fax</strong> (619) 465‑2698</p>
+          <p class="small">Hours: Mon–Fri, 9:00 AM – 5:00 PM PT</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<footer>
+  <div class="container">
+    <div class="grid grid-3">
+      <div>
+        <div class="brand">Child Nutrition Program of Southern California</div>
+        <div class="small">7777 Alvarado Rd, Suite 422, La Mesa, CA 91942</div>
+        <div class="small">Phone: (619) 465-4500 | Toll-free: (800) 233-8107 | Fax: (619) 465-2698</div>
+      </div>
+      <div>
+        <div><strong>Quick links</strong></div>
+        <div class="small">
+          <a href="resources.html">Provider Resources</a> ·
+          <a href="benefits.html">Program Benefits</a> ·
+          <a href="join.html">Join</a>
+        </div>
+      </div>
+      <div>
+        <div><strong>Equal Opportunity</strong></div>
+        <div class="small">This institution is an equal opportunity provider.</div>
+      </div>
+    </div>
+    <div class="small" style="margin-top:.8rem;">&copy; <span id="y"></span> Child Nutrition Program of Southern California. All rights reserved.</div>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+</footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

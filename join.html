@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join — CNPSC</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="index.html" aria-label="CNPSC Home">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <rect x="3" y="6" width="34" height="28" rx="8" ry="8" fill="url(#g)"/>
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="40" y2="40">
+            <stop stop-color="#1e88e5"/><stop offset="1" stop-color="#1565c0"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>CNPSC</span>
+    </a>
+    <nav class="navlinks">
+        <a href="index.html" class="">Home</a>
+        <a href="about.html" class="">About</a>
+        <a href="benefits.html" class="">Benefits</a>
+        <a href="join.html" class="active">Join</a>
+        <a href="resources.html" class="">Resources</a>
+        <a href="employment.html" class="">Employment</a>
+        <a href="contact.html" class="">Contact</a>
+        <a class="cta" href="join.html">Apply</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Toggle menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <section class="section">
+      <div class="container grid grid-2">
+        <div>
+          <h1>Apply to Join the Program</h1>
+          <p>Complete this form and a CNPSC team member will contact you with next steps for enrollment.</p>
+          <form id="joinForm" novalidate>
+            <div class="form-row">
+              <div>
+                <label for="name">Your full name *</label>
+                <input id="name" name="name" required placeholder="First Last" />
+              </div>
+              <div>
+                <label for="phone">Home/Daycare phone *</label>
+                <input id="phone" name="phone" required placeholder="(###) ###-####" />
+              </div>
+            </div>
+            <label for="address">Daycare address *</label>
+            <input id="address" name="address" required placeholder="Street address" />
+            <div class="form-row">
+              <div><label for="city">City *</label><input id="city" name="city" required /></div>
+              <div><label for="zip">ZIP code *</label><input id="zip" name="zip" required /></div>
+            </div>
+            <div class="form-row">
+              <div><label for="date">Date *</label><input id="date" name="date" type="date" required /></div>
+              <div>
+                <label for="license">Do you have a family daycare license? *</label>
+                <select id="license" name="license" required>
+                  <option value="">Select…</option>
+                  <option>Yes</option><option>No</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="children">Do you have children in care currently? *</label>
+                <select id="children" name="children" required>
+                  <option value="">Select…</option>
+                  <option>Yes</option><option>No</option>
+                </select>
+              </div>
+              <div>
+                <label for="prior">Have you been on a child food program before?</label>
+                <select id="prior" name="prior">
+                  <option value="">Select…</option>
+                  <option>Yes</option><option>No</option>
+                </select>
+              </div>
+            </div>
+            <label for="priorName">If yes, name of the prior program</label>
+            <input id="priorName" name="priorName" placeholder="Program name" />
+            <label for="whenWhere">When and city location?</label>
+            <input id="whenWhere" name="whenWhere" placeholder="Approx. dates and city" />
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" placeholder="Anything else we should know?"></textarea>
+            <div style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap">
+              <button class="btn" type="submit">Submit</button>
+              <a class="badge" href="benefits.html">See benefits</a>
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Questions?</h3>
+          <p>Call us at (619) 465‑4500 or (800) 233‑8107. We’re happy to help you get started.</p>
+          <p><strong>Office</strong><br/>7777 Alvarado Rd, Suite 422<br/>La Mesa, CA 91942</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<footer>
+  <div class="container">
+    <div class="grid grid-3">
+      <div>
+        <div class="brand">Child Nutrition Program of Southern California</div>
+        <div class="small">7777 Alvarado Rd, Suite 422, La Mesa, CA 91942</div>
+        <div class="small">Phone: (619) 465-4500 | Toll-free: (800) 233-8107 | Fax: (619) 465-2698</div>
+      </div>
+      <div>
+        <div><strong>Quick links</strong></div>
+        <div class="small">
+          <a href="resources.html">Provider Resources</a> ·
+          <a href="benefits.html">Program Benefits</a> ·
+          <a href="join.html">Join</a>
+        </div>
+      </div>
+      <div>
+        <div><strong>Equal Opportunity</strong></div>
+        <div class="small">This institution is an equal opportunity provider.</div>
+      </div>
+    </div>
+    <div class="small" style="margin-top:.8rem;">&copy; <span id="y"></span> Child Nutrition Program of Southern California. All rights reserved.</div>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+</footer>
+
+  <script src="assets/app.js"></script>
+  <script>validateForm('joinForm')</script>
+</body>
+</html>
