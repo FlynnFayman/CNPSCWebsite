@@ -72,6 +72,12 @@
             </div>
             <div class="form-row">
               <div>
+                <label for = "email">Email</label>
+                <input id = "email" name = "email" required placeholder="Email@Email.com"/>
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
                 <label for="children">Do you have children in care currently? *</label>
                 <select id="children" name="children" required>
                   <option value="">Select…</option>
@@ -133,7 +139,6 @@
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </footer>
 
-  <script src="assets/app.js"></script>
-  <script>validateForm('joinForm')</script>
+  <script type = "module" src="assets/app.js"></script>
 </body>
 </html>

@@ -1,27 +1,46 @@
-// Basic interactions
-const toggle = document.querySelector('.mobile-toggle');
-const header = document.querySelector('.header');
-if (toggle && header){
-  toggle.addEventListener('click', () => {
-    header.classList.toggle('mobile-open');
-  });
-}
+const joinForm = document.getElementById('joinForm');
 
-// Simple form handler (no backend): validates required fields
-function validateForm(formId){
-  const form = document.getElementById(formId);
-  if(!form) return;
-  form.addEventListener('submit', (e)=>{
-    e.preventDefault();
-    const required = form.querySelectorAll('[required]');
-    let ok = true;
-    required.forEach(el=>{
-      if(!el.value.trim()){ ok = false; el.style.borderColor = '#ef4444'; }
-      else el.style.borderColor = '#d1d5db';
-    });
-    if(!ok){ alert('Please complete the required fields.'); return; }
-    // Simulate success
-    alert('Thanks! Your submission has been recorded locally for demo.');
-    form.reset();
-  });
-}
+joinForm.addEventListener('submit', function(event){
+    event.preventDefault()
+    const formData = new FormData(event.target)
+    const data = Object.fromEntries(formData.entries())
+    console.log(data)
+
+    if(!data.name || data.name.trim().length < 2){
+        alert('Please enter a valid name')
+        return;
+    }
+
+    
+    if (!/^\d{10}$/.test(data.phone)) {
+        alert('Please enter a 10-digit phone number.');
+        return;
+    }
+
+    if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+
+    // (Optional) city/address/license validation
+    if (!data.city || data.city.trim().length < 2) {
+        alert('City field is required.');
+        return;
+    }
+
+    if (!data.zip || data.zip.trim().length != 5){
+        alert("Please enter a vaild zip code")
+    }
+
+    fetch("http://localhost:8080/api/v1/applys/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    }).then(res => res.json())
+      .then(data => {
+        alert("Thanks! Your submission was received.")
+        joinForm.reset()
+    })
+
+    console.log('Validated data:', data);
+})
