@@ -15,7 +15,7 @@ export default class ApplysDAO{
         }
     }
 
-    static async addApp(name, phone, address, city, zip, date, license, notes){
+    static async addApp(name, phone, address, city, zip, email, date, license, notes){
         try {
             const AppObject = {
                 name: name,
@@ -23,6 +23,7 @@ export default class ApplysDAO{
                 address: address,
                 city: city,
                 zip: zip,
+                email: email,
                 date: date,
                 license: license,
                 notes: notes
