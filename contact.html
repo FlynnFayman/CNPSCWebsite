@@ -45,14 +45,15 @@
           <p>We’re here to help with enrollment, menu planning, claims, and training.</p>
           <form id="contactForm" novalidate>
             <label for="cname">Your name *</label>
-            <input id="cname" required />
+            <input id="cname" name="cname" required />
             <label for="cemail">Email *</label>
-            <input id="cemail" type="email" required placeholder="you@example.com" />
+            <input id="cemail" type="email" name="cemail" required placeholder="you@example.com" />
+            <label for="cproviderId">ProviderId</label>
+            <input id="cproviderId" name="cproviderId" placeholder="Four Digit Number"/>
             <label for="cmsg">Message *</label>
-            <textarea id="cmsg" required placeholder="How can we help?"></textarea>
+            <textarea id="cmsg" name="ctext" required placeholder="How can we help?"></textarea>
             <div style="margin-top:1rem"><button class="btn" type="submit">Send</button></div>
           </form>
-          <script>validateForm('contactForm')</script>
         </div>
         <div class="card">
           <h3>Office</h3>
@@ -128,6 +129,6 @@
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </footer>
 
-  <script src="assets/app.js"></script>
+<script src="assets/contact.js"></script>
 </body>
 </html>

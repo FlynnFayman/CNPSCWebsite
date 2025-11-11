@@ -9,6 +9,8 @@ app.use(express.json())
 
 app.use("/api/v1/Applys",Applys)
 
+app.use()
+
 app.use("/*snomething", (req,res) => {
     res.status(404).json({error:"not found"})
 })
